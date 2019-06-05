@@ -10,8 +10,9 @@ body{
   display: grid;
   grid-template-rows: 1fr;
 }
+
 .imgContainer{
-    grid-template-rows: 1/2; 
+    grid-row: 1/2; 
     position: relative;
     display: flex;
     justify-content: center;
@@ -23,11 +24,7 @@ body{
    
  }
 
-.containerPar{
-  grid-template-rows: span2;
-  padding: 20px;
-  text-align: center;
-}
+
  h1{
    position: absolute;
    color: azure;
@@ -38,20 +35,90 @@ body{
    font-size: 2em;
  }
 
- .foot{
-   height: 150px;
+ .containerPar{
+  grid-row: span 2;
+  padding: 20px;
+  text-align: left;
+ }
+
+ .containerPar p {
+   margin: 15px;
+   text-indent: 20px;
+   text-align: justify;
+}
+
+ 
+@media screen and (min-width: 480px) {
+  .containerPar p {
+   margin-left: 100px;
+   margin-right: 100px;
+  }
+}
+  .ads{
+   
+   height: 200px;
    background-color: brown;
    display: flex;
    justify-content: space-around;
    align-items: center;
  }
-
+ 
+ @media screen and (max-width: 480px) {
+  .ads {
+     flex-direction: column;
+     height: 500px;
+     text-align: center;
+     color: white;
+  }
+}
  .box {
    padding: 10px;
    height: 100px;
    width: 100px;
-   background-color: rgb(109, 12, 32);
+   background-color: rgb(255, 255, 255);
    box-shadow: 0 0 3px rgb(255, 216, 216);
-   color: aliceblue;
+   color: rgb(63, 6, 6);
+   border-radius: 5px;
    text-align: center;
-   }
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+ }
+
+ .box:hover {
+  padding: 10px;
+  height: 110px;
+  width: 110px;
+  background-color: rgb(143, 0, 0);
+  box-shadow: 0 0 3px rgb(255, 216, 216);
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 100ms
+ }
+
+
+ .foot {
+   text-align: center;
+   padding: 30px;
+   
+ }
+
+ .foot h3{
+   font-size: 21px;
+   text-align: center;
+ }
+
+a{
+  text-decoration: none;
+  color: brown;  
+}
+
+a:hover{
+  text-decoration: none;
+  color: white;
+}
