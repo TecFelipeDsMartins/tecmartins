@@ -8,11 +8,11 @@ body{
 .newsContainer{
   margin-top: 80px;
   display: grid;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr auto auto 200px;
 }
 
 .imgContainer{
-    grid-row: 1/2; 
+    grid-row: span 1; 
     position: relative;
     display: flex;
     justify-content: center;
@@ -36,7 +36,7 @@ body{
  }
 
  .containerPar{
-  grid-row: span 2;
+  grid-row: span 1;
   padding: 20px;
   text-align: left;
  }
@@ -54,17 +54,31 @@ body{
    margin-right: 100px;
   }
 }
-  .ads{
-   
-   height: 200px;
-   background-color: brown;
+
+
+
+
+.ads{
+   background-image: url("img/color.jpg");
+   background-repeat: no-repeat;
+   background-size: 500px;
+   grid-row: 3/4;
+  
    display: flex;
    justify-content: space-around;
    align-items: center;
  }
+
+ .subtitle {
+   z-index: 1;
+   text-shadow: 0 0 5px rgb(5, 5, 5);
+ }
  
  @media screen and (max-width: 480px) {
   .ads {
+    
+     grid-row: 3/4;
+     z-index: 1;
      flex-direction: column;
      height: 500px;
      text-align: center;
@@ -72,6 +86,7 @@ body{
   }
 }
  .box {
+   z-index: 1;
    padding: 10px;
    height: 100px;
    width: 100px;
