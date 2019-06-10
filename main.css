@@ -8,11 +8,13 @@ body{
 .newsContainer{
   margin-top: 80px;
   display: grid;
-  grid-template-rows: 1fr auto auto 200px;
+  grid-template-rows: 1fr auto 500px 100px;
+  grid-template-columns: minmax(15px,100px) auto minmax(15px, 100px);
 }
 
 .imgContainer{
-    grid-row: span 1; 
+    grid-row: span 1;
+    grid-column: 1/-1; 
     position: relative;
     display: flex;
     justify-content: center;
@@ -37,6 +39,7 @@ body{
 
  .containerPar{
   grid-row: span 1;
+  grid-column: 2/3;
   padding: 20px;
   text-align: left;
  }
@@ -59,20 +62,13 @@ body{
 
 
 .ads{
-   background-image: url("img/color.jpg");
-   background-repeat: no-repeat;
-   background-size: 500px;
    grid-row: 3/4;
-  
+   grid-column: 2/3;
    display: flex;
    justify-content: space-around;
    align-items: center;
  }
 
- .subtitle {
-   z-index: 1;
-   text-shadow: 0 0 5px rgb(5, 5, 5);
- }
  
  @media screen and (max-width: 480px) {
   .ads {
@@ -85,13 +81,33 @@ body{
      color: white;
   }
 }
+.cont {
+  height: 500px;
+  width: 100%;
+  grid-row: 3/4;
+  grid-column: 1/-1;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.backImage {
+ 
+  height: 100%;
+}
+
+.subtitle {
+  z-index: 1;
+  text-shadow: 0 0 5px rgb(5, 5, 5);
+}
  .box {
    z-index: 1;
    padding: 10px;
    height: 100px;
    width: 100px;
    background-color: rgb(255, 255, 255);
-   box-shadow: 0 0 3px rgb(255, 216, 216);
+   box-shadow: 0 0 3px rgb(255, 33, 33);
    color: rgb(63, 6, 6);
    border-radius: 5px;
    text-align: center;
@@ -120,6 +136,8 @@ body{
  .foot {
    text-align: center;
    padding: 30px;
+   grid-row: 4/5;
+   grid-column: 1/-1;
    
  }
 
